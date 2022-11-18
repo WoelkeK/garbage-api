@@ -26,7 +26,7 @@ public class SheduleController {
     private static Logger LOGGER = Logger.getLogger(SheduleService.class.getName());
     private final SheduleService sheduleService;
 
-    @GetMapping("/shedule")
+    @GetMapping("/shedules")
     public List<SheduleDto> getShedules(@RequestParam(required = false) Integer page, Sort.Direction sort) {
         LOGGER.info("getShedules()");
         int pageNumber = page != null && page >= 0 ? page : 0;
@@ -36,7 +36,7 @@ public class SheduleController {
         return sheduleList;
     }
 
-    @GetMapping("/shedule/{id}")
+    @GetMapping("/shedules/{id}")
     public Shedule getSingleShedule(@PathVariable long id) {
         LOGGER.info("getSingleShedule()");
         Shedule singleShedule = sheduleService.getSingleShedule(id);
@@ -49,13 +49,13 @@ public class SheduleController {
         return createdShedule;
     }
 
-    @PutMapping("/shedule")
+    @PutMapping("/shedules")
     public Shedule updateSingleShedule(@RequestBody Shedule shedule) {
         Shedule updatedShedule = sheduleService.updateShedule(shedule);
         return updatedShedule;
     }
 
-    @DeleteMapping("/shedule/{id}")
+    @DeleteMapping("/shedules/{id}")
     public void deleteShedule(@PathVariable long id) {
         sheduleService.deleteShedule(id);
     }
