@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class SheduleService {
 
     private static Logger LOGGER = Logger.getLogger(SheduleService.class.getName());
-    private static final int PAGESIZE = 5;
+    private static final int PAGESIZE = 10;
 
     private final SheduleRepository sheduleRepository;
 
