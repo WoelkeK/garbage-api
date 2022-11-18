@@ -15,8 +15,6 @@ public class GarbageApiApplication {
 
 
         SheduleDataGenerator sheduleDataGenerator = new SheduleDataGenerator();
-        HashMap<String[], String[]> sheduleGeneratedData = sheduleDataGenerator.generateSheduleData();
-//        sheduleDataGenerator.printSheduleData(sheduleGeneratedData);
-        sheduleDataGenerator.createSheduleDatabase(sheduleGeneratedData);
+        sheduleDataGenerator.generateSheduleData();
     }
 }
